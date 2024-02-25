@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/spinkit.css" type="text/css">
+    <style>
+
+        html,body{
+            height: 100%;
+        }
+
+        #app, #myContainer{
+            width: 100%;
+            height: 100%;
+        }
+
+        .myContainer{
+            background-image: url("images/double-bubble-outline.png");
+        }
+
+        .vbox{
+            font-size: 30px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            background-color: #e3e3e3;
+            flex-direction: column;
+            text-align: center;
+            /*width:135px;*/
+            /*height:135px;*/
+        }
+
+        .body-list ul{
+            width:100%;
+            font-family:arial;
+            font-weight:bold;
+            font-size:14px;
+        }
+        .body-list ul li{
+            width:14.28%;
+            height:36px;
+            line-height:36px;
+            list-style-type:none;
+            display:block;
+            box-sizing:border-box;
+            float:left;
+            text-align:center;
+        }
+        .lightgrey{
+            color:#a8a8a8; /*浅灰色*/
+        }
+        .darkgrey{
+            color:#565656; /*深灰色*/
+        }
+        .green{
+            color:#6ac13c; /*绿色*/
+        }
+        .greenBox{
+            border:1px solid #6ac13c;
+            background:#e9f8df; /*浅绿色背景*/
+        }
+
+        .fade-enter-active, .fade-leave-active {
+            transition: opacity 1.5s;
+        }
+        .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!--Navbar-->
+<div id="app" class="container-fluid modal-dialog-centered">
+    <div id="myContainer" :class="{myContainer:containerActive}">
+
+        <div id="animation" v-if="animationStart" class="vbox mx-auto modal-dialog-centered">
+            <div class="sk-three-bounce mx-auto modal-dialog-centered">
+<!--                <div>Loading</div>-->
+                <div class="sk-child sk-bounce1"></div>
+                <div class="sk-child sk-bounce2"></div>
+                <div class="sk-child sk-bounce3"></div>
+            </div>
+        </div>
+
+        <transition name="fade">
+
+            <div v-if="isShow">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light border">
+                <div class="container-fluid form-inline row">
+                    <div class="row col-8">
+                        <a class="navbar-brand col-md-2" href="HomePage.html">Home</a>
+                        <button class="navbar-toggler col-md-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse col-md-8" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-md-8 row">
+                                <li class="nav-item col-4">
+                                    <a class="nav-link active" aria-current="page" href="#">JAVA</a>
+                                </li>
+                                <li class="nav-item col-4">
+                                    <a class="nav-link active" href="#">Spring</a>
+                                </li>
+                                <!--          <li class="nav-item">
+                                                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                              </li> -->
+
+                            </ul>
+            <!--                <div class="col-md-4"></div>-->
+
+                        </div>
+
+                    </div>
+                    <div class="nav-item dropdown col-1">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Projects
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">SSM</a>
+                            <a class="dropdown-item" href="#">Springboot</a>
+                            <a class="dropdown-item" href="#">Something else</a>
+                        </div>
+                    </div>
+                    <form class="d-flex col-md-2">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+                </nav>
+
+                <div class="row">
+<!--                <div class="card col-md-4 p-3 mb-2 bg-light text-dark" id="loginPanel">-->
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4" id="">
+                        <form>
+                            <div class="form-group">
+                                <label for="username"></label>
+                                <input type="text" class="form-control" id="username" v-model="username" placeholder="User Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="password"></label>
+                                <input type="password" class="form-control" id="password" v-model="password" placeholder="Password">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <input type="submit" class="col-md-3 btn btn-secondary btn-mini" v-on:click="signIn" value="Check in">
+                                <div class="col-md-4"></div>
+                                <input type="submit" class="col-md-3 btn btn-info btn-mini" v-on:click="signUp" value="Sign Up">
+                                <div class="col-md-1"></div>
+                            </div>
+                            <div v-if="isUser">Login Successfully!</div>
+                            <div v-if="isFail">Please enter the correct user name and password!</div>
+                            <div v-if="isEmpty">Your username or password is empty!</div>
+                            <div v-if="userExist">This user already exist!</div>
+                            <div v-if="signUpSuccess">Sign up successfully!</div>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <br>
+                <div class="row" v-show="calendarActive">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 card table-success">
+                        <div class="row mx-auto green h4" >{{cYear}}</div>
+                        <div class="row">
+                            <div onclick="" > < </div>
+                            <div class="row mx-auto green h6" >{{cMonth}}</div>
+                            <div onclick="" > > </div>
+                        </div><!-- Year -->
+                        <!-- Weeks -->
+                        <div class="body-list">
+                            <ul>
+                                <li>MON</li>
+                                <li>TUE</li>
+                                <li>WED</li>
+                                <li>THU</li>
+                                <li>FRI</li>
+                                <li>SAT</li>
+                                <li>SUN</li>
+                            </ul>
+                        </div>
+                        <div class="darkgrey body-list">
+                            <ul id="days" ></ul>
+                    </div>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+
+            </div>
+        </transition>
+    </div>
+</div>
+<!--vue components-->
+<!--	<template id="loading">-->
+<!--        <div>-->
+
+<!--        </div>-->
+<!--	</template>-->
+
+<!--vue scripts-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+
+    let app = new Vue({
+        el:"#app",
+        data:{
+            // containerActive:true,
+            animationStart:true,
+            containerActive:false,
+            isShow:false,
+            calendarActive:false,
+            isUser:false,
+            isFail:false,
+            isEmpty:false,
+            userExist:false,
+            signUpSuccess: false,
+            isThisDayCheck:[],
+            daysOrThisMonth:[],
+            dateOfCurrMont:[],
+            month_olympic: [31,29,31,30,31,30,31,31,30,31,30,31],
+            month_normal: [31,28,31,30,31,30,31,31,30,31,30,31],
+            month_name: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+            dateCheckIn:[],
+            myDate:null,
+            myYear:null,
+            myMonth:null,
+            myDay:null,
+            holder:"",
+            cMonth:"Month",
+            cYear:"Year",
+            username:"",
+            password:"",
+            user:null,
+        },
+        methods:{
+            signIn:function (e) {
+                e.preventDefault();
+                app.calendarActive = false;
+                //console.log("check in");
+                if(app.username===""||app.password===""){
+                    <!-- Empty -->
+                    app.isEmpty = true;
+                    app.isFail = false;
+                    app.isUser = false;
+                    app.userExist = false;
+                    app.signUpSuccess = false;
+                    app.calendarActive = false;
+                }else {
+                    let url = "connect.php";
+                    let request = new XMLHttpRequest();
+                    request.open("post", url);/*设置请求方法与路径*/
+                    // 设置POST请求的请求头
+                    request.setRequestHeader("Content-Type"
+                        , "application/x-www-form-urlencoded");
+                    request.send("username="+app.username+"&password="+app.password);/*发送或不发送数据到服务器*/
+                    request.onload = function () {/*XHR对象获取到返回信息后执行*/
+                        if (request.readyState==4 && request.status==200 && request.responseText === "good")
+                        {
+                            console.log("Success!!");
+                            console.log(request.responseText);
+                            <!-- Success -->
+                            app.isFail = false;
+                            app.isEmpty = false;
+                            app.isUser = true;
+                            app.userExist = false;
+                            app.signUpSuccess = false;
+                            app.showCalendar();
+                            app.calendarActive = true;
+                        }else {
+                            <!-- Fail -->
+                            console.log("Fail!!");
+                            app.isFail = true;
+                            app.isEmpty = false;
+                            app.isUser = false;
+                            app.userExist = false;
+                            app.signUpSuccess = false;
+                            app.calendarActive = false;
+                        }
+                    }
+                }
+            },
+            signUp:function (e) {
+                e.preventDefault();
+                let isSuccess = false;
+
+                if(app.username===""||app.password===""){
+                    <!-- Empty -->
+                    app.isEmpty = true;
+                    app.isFail = false;
+                    app.userExist = false;
+                    app.signUpSuccess = false;
+                    app.isUser = false;
+                    app.calendarActive = false;
+                }else{
+                    app.isFail = false;
+                    app.isUser = false;
+                    app.isEmpty = false;
+                    app.calendarActive = false;
+                    let url = "checkUserExist.php";
+                    let request = new XMLHttpRequest();
+                    request.open("post", url);/*设置请求方法与路径*/
+                    // 设置POST请求的请求头
+                    request.setRequestHeader("Content-Type"
+                        , "application/x-www-form-urlencoded");
+                    request.send("username="+app.username);/*发送或不发送数据到服务器*/
+                    request.onload = function () {/*XHR对象获取到返回信息后执行*/
+                        console.log("onload")
+                        if (request.readyState==4 && request.status==200)
+                        {
+                            if(request.responseText === "exists" && isSuccess === false){
+                                console.log("User Exist!!");
+                                console.log(request.responseText);
+                                <!-- Fail -->
+                                app.userExist = true;
+                                app.signUpSuccess = false;
+                            }else {
+                                <!-- Success -->
+                                isSuccess = true;
+                                console.log(isSuccess);
+
+                                let request2 = new XMLHttpRequest();
+                                request2.open("post", "signUp.php");
+                                // 设置POST请求的请求头
+                                request2.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                                request2.send("username="+app.username+"&password="+app.password);
+                                /*发送或不发送数据到服务器*/
+                                console.log("sign up success");
+                                app.userExist = false;
+                                app.signUpSuccess = true;
+
+                            }
+                        }
+                    }
+
+                }
+            },
+            showCalendar:function(){
+                app.getMyDate();
+                app.checkInDate();
+                app.checkInAlreadyOrNot();
+                app.animationStart = true;
+                setTimeout(() => {
+                    console.log("执行渲染");
+                    app.refreshDate();
+                    app.animationStart = false;
+                }, 500);
+            },
+            dayStart: function (month, year) {
+                let tmpDate = new Date(year, month, 1);
+            return (tmpDate.getDay());
+            },
+            daysMonth: function (month, year) {
+                let tmp = year % 4;
+                if (tmp == 0) {
+                    return (app.month_olympic[month]);
+                } else {
+                    return (app.month_normal[month]);
+                }
+            },
+            getMyDate: function () {
+                app.myDate = new Date();
+                app.myYear = app.myDate.getFullYear();
+                app.myMonth = app.myDate.getMonth()+1;
+                app.myDay = app.myDate.getDate();
+                app.holder = document.getElementById("days");
+            },
+            //渲染刷新
+            refreshDate: function (){
+                let myDate = app.myDate;
+                let myYear = app.myYear;
+                let myMonth = app.myMonth;
+                let myDay = app.myDay;
+                const totalDay = app.daysMonth(myMonth, myYear); //获取该月总天数
+                const firstDay = app.dayStart(myMonth, myYear); //获取该月第一天是星期几
+                let str = "";
+                let myClass = "";
+
+                for(let i=1; i<firstDay; i++){
+                    str += "<li></li>"; //为起始日之前的日期创建空白节点
+                }
+                for(let i=1; i<=totalDay; i++){
+                    if((i<myDay && myYear === myDate.getFullYear() && myMonth === myDate.getMonth() + 1) || myYear < myDate.getFullYear()
+                        || ( myYear === myDate.getFullYear() && myMonth < myDate.getMonth() + 1)){
+
+                        if(app.isThisDayCheck[i-1]){
+                            console.log("days find: "+i);
+                            myClass = " class='green greenBox'"; //当天日期以绿色背景突出显示
+                        }else {
+                            myClass = " class='lightgrey'"; //当该日期在今天之前时，以浅灰色字体显示
+                        }
+                    }else if (i === myDay && myYear === myDate.getFullYear() && myMonth === myDate.getMonth() + 1){
+                        myClass = " class='green greenBox'"; //当天日期以绿色背景突出显示
+                    }else{
+                        myClass = " class='darkgrey'"; //当该日期在今天之后时，以深灰字体显示
+                    }
+                    str += "<li"+myClass+">"+i+"</li>"; //创建日期节点
+                }
+                app.holder.innerHTML = str; //设置日期显示
+                app.cMonth = app.month_name[myMonth]; //设置英文月份显示
+                app.cYear = myYear; //设置年份显示
+            },
+            //检查是否打卡
+            checkInAlreadyOrNot: function () {
+                let myYear = app.myYear;
+                let myMonth = app.myMonth;
+                const totalDays = app.myDay - 1;
+
+                for (let i = 1; i <= totalDays; i++) {
+                    app.dateOfCurrMont[i] = myYear + "-" + myMonth + "-" + i;
+                }
+
+                for (let i = 1; i <= totalDays; i++) {
+                    let url = "refreshDate.php";
+                    let request = new XMLHttpRequest();
+                    let currDate = app.dateOfCurrMont[i];
+                    setTimeout(() => {
+                    request.open("post", url);/*设置请求方法与路径*/
+                    // 设置POST请求的请求头
+                    request.setRequestHeader("Content-Type"
+                        , "application/x-www-form-urlencoded");
+                    request.send("username="+app.username+"&currDate="+currDate);/*发送或不发送数据到服务器*/
+                    request.onload = function () {/*XHR对象获取到返回信息后执行*/
+                        if (request.readyState==4 && request.status==200)
+                        {
+                                    console.log(request.responseText);
+                                    if(request.responseText === "yes"){
+                                        <!-- Yes -->
+                                        app.daysOrThisMonth.push(i);
+                                        app.isThisDayCheck.push(true);
+                                    }else {
+                                        <!-- No -->
+                                        app.isThisDayCheck.push(false);
+                                    }
+                                }
+                        }
+
+                    }, 50);
+                }
+
+                // return {promise:new Promise(resolve => {
+                //     setTimeout(() => {
+                //         resolve('resolved');
+                //     }, 200);
+                // })}
+
+
+            },
+            //打卡
+            checkInDate: function () {
+
+                if(app.username===""||app.password===""){
+                    <!-- Empty -->
+                    app.isEmpty = true;
+                    app.isFail = false;
+                    app.isUser = false;
+                    app.userExist = false;
+                    app.signUpSuccess = false;
+                    app.calendarActive = false;
+                }else {
+                    let url = "getDateInfo.php";
+                    let request = new XMLHttpRequest();
+                    request.open("post", url);/*设置请求方法与路径*/
+                    // 设置POST请求的请求头
+                    request.setRequestHeader("Content-Type"
+                        , "application/x-www-form-urlencoded");
+                    let date = app.myYear+"-"+app.myMonth+"-"+app.myDay;
+                    request.send("myDate="+ date +"&username="+app.username);/*发送或不发送数据到服务器*/
+                    request.onload = function () {/*XHR对象获取到返回信息后执行*/
+                        if (request.readyState == 4 && request.status == 200) {
+                            <!-- Success -->
+                            //    获取日期数据
+                            if(request.getResponseHeader('content-type')==='application/json'){
+                                const result = JSON.parse(request.responseText);
+                                //根据返回结果判断验证码是否正确
+                                console.log(result);
+                                app.dateCheckIn = result;
+                            } else {
+                                console.log(request.responseText);
+                                app.dateCheckIn = request.responseText;
+                            }
+
+                        } else {
+                            <!-- Fail -->
+                            console.log("get date info fail!!");
+                        }
+
+                    }
+                }
+            }
+        },
+        created: function(){
+                // setTimeout(function () {
+                //     let animation = document.getElementById('animation');
+                //     if (animation != null) {
+                //         animation.parentNode.removeChild(animation);
+                //     }
+                //     app.containerActive=!app.containerActive;
+                //     app.isShow = !app.isShow;
+                //
+                // }, 0.5 * 1000);
+            setTimeout(function () {
+                if (app.animationStart) {
+                    app.animationStart = false;
+                }
+            }, 0.3 * 1000);
+
+            setTimeout(function () {
+                app.containerActive=!app.containerActive;
+                app.isShow = !app.isShow;
+            }, 0.5 * 1000);
+        }
+    })
+</script>
+
+</body>
+</html>

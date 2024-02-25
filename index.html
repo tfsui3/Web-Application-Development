@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html lang="en">
+	<head>
+		<title>Homework 7 Group Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+<!--        // also modified this stylesheet - AMANDA-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	    <link rel="stylesheet" href="assets/css/port.css" />
+
+	</head>
+	<body class="is-preload ">
+	<div id="app">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+<!--							// removed the original code and added this image here - AMANDA-->
+							<img src="images/logo.png" class=img2 width="75" height="51" alt=""/>
+						</div>
+						<div class="content">
+<!--							// updated this content - AMANDA-->
+							<div class="inner" id="innerContent">
+								<h1>Welcome to Our Group Project</h1>
+								<p>Ziming | Amanda </p>
+								<button onclick="window.location.href='#signUpArticle'">Sign Up</button>
+                                <button onclick="window.location.href='#signInArticle'">Sign In</button>
+							</div>
+						</div>
+						<nav>
+<!--							// upated the navigation - AMANDA-->
+							<ul>
+								<li><a href="#">Home</a></li>
+								<li><a href="#intro">Portfolios</a></li>
+								<li><a href="#about">About Us</a></li>
+								<li><a href="#contact">Contact Us</a></li>
+								<!--<li><a href="#elements">Elements</a></li>-->
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+<!--						&lt;!&ndash; Intro &ndash;&gt; // Added content here and the lightbox gallery - AMANDA-->
+							<article id="intro">
+								
+								<h2 class="major">Portfolios</h2>
+								<p id="prova">Our primary goal is to produce exceptional work for our clients. Every action we take is to help our clients achieve their goals and objectives. We don’t think of our clients as merely customers, we value them as partners. Below is a sampling of our work. Click to enlarge.
+									</p>
+
+    <a href="#img1">
+        <img class="thumb" src="images/packaging_sample.jpg">
+    </a>
+    <!-- lightbox container hidden with CSS -->
+    <div class="lightbox" id="img1">
+        <a href="#img3" class="light-btn btn-prev">prev</a>
+            <a href="#_" class="btn-close">X</a>
+            <img src="images/packaging_sample.jpg">
+        <a href="#img2" class="light-btn btn-next">next</a>
+    </div>
+
+    <a href="#img2">
+      <img class="thumb" src="images/logo_examples.png">
+    </a>
+    <!-- lightbox container hidden with CSS -->
+    <div class="lightbox" id="img2">
+        <a href="#img1" class="light-btn btn-prev">prev</a>
+            <a href="#_" class="btn-close">X</a>
+            <img src="images/logo_examples.png">
+        <a href="#img3" class="light-btn btn-next">next</a>
+    </div>
+
+    <a href="#img3">
+      <img class="thumb" src="images/corporate_identity.jpg">
+    </a>
+    <!-- lightbox container hidden with CSS -->
+    <div class="lightbox" id="img3">
+        <a href="#img2" class="light-btn btn-prev">prev</a>
+            <a href="#_" class="btn-close">X</a>
+            <img src="images/corporate_identity.jpg">
+        <a href="#img1" class="light-btn btn-next">next</a>
+    </div>
+			<a href="#img4">
+      <img class="thumb" src="images/business_cards.jpg">
+    </a>
+    <!-- lightbox container hidden with CSS -->
+    <div class="lightbox" id="img4">
+        <a href="#img2" class="light-btn btn-prev">prev</a>
+            <a href="#_" class="btn-close">X</a>
+            <img src="images/business_cards.jpg">
+        <a href="#img1" class="light-btn btn-next">next</a>
+    </div>					
+							</article>
+<!--						// updated this article with my bio and placeholder for Ziming - AMANDA-->
+						<article id="about">
+								<h2 class="major">Meet the Team</h2>
+								<span class="image main"><img src="images/pic012.jpg" alt="" /></span>
+								 <h3 class="major">Ziming</h3>
+								<p>Ziming Yang is from Fuzhou City, Fujian province, China. In 2016, he began studying computer science at the Troy University. Over the past few years, he has learned in software development, with programming technologies: JAVA and Java web development, Spring framework, C# game development, and Javascript. He is currently about to graduate from college. In the future, his goal is to engage in back-end development.</p>
+								
+							<h3 class="major">Amanda</h3>
+								<p>Amanda Coalson is from Birmingham, Alabama and has been in graphic design since 2004. She has been with her husband for 20 years and they have three beautiful children, a dog and cat. She spent 15 years in advertising and freelance graphic/web design before beginning to pursue a career in software development. Amanda is currently employed with Jack Henry and Associates as a Remote Business Analyst. Her role has transformed over the last couple of years to include: technical writing, development research and design specs, UI concepts, and training. </p> 
+								<p>When not at work, you can find Amanda at the local youth sports complex watching her boys play sports or grilling out by the pool with friends and family. She also volunteers her skills to the PTO and Youth Football League assisting each year in class shirt designs and football banners.</p>
+							</article>
+
+
+<!--						&lt;!&ndash; Work &ndash;&gt; //removed this - AMANDA-->
+							
+
+<!--						&lt;!&ndash; About Me &ndash;&gt; // removed this - AMANDA-->
+
+
+						<!-- Contact -->
+							<article id="contact">
+								<h2 class="major">Contact</h2>
+								<form method="post" action="#" id="contactForm">
+									<div class="fields">
+                                        
+										<div class="field half">
+											<label for="name">Name</label>
+											<input type="text" name="name" id="name"  />
+                                            <div id="nameWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+										</div>
+										<div class="field half">
+											<label for="email">Email</label>
+											<input type="text" name="email" id="email"  />
+                                            <div id="emailWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+										</div>
+                                        <div class="field">
+                                            <label for="subject">Subject</label>
+                                            <input type="text" name="subject" id="subject" />
+                                            <div id="subjectWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+                                        </div>
+										<div class="field">
+											<label for="message">Message</label>
+											<textarea name="message" id="message" rows="4" ></textarea>
+                                            <div id="messageWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+										</div>
+									</div>
+									<ul class="actions">
+<!--                                        Added element name="submit" here, it is needed for php. -- Ziming-->
+										<li><input type="submit" name="submit" value="Send Message" class="primary"/></li>
+										<li><input type="reset" value="Reset" /></li>
+									</ul>
+								</form>
+
+                                <!--								// added the social media icons here - AMANDA-->
+								<ul class="icons">
+									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</article>
+
+<!--                        Contact Result-->
+                            <article id="contactResult">
+<!--								//This style or another - looks good! Amanda-->
+                                <h3 class="" id="contactSuccess">Thank you for contacting us.</h3>
+                            </article>
+
+<!--                        Sign In Form-->
+							<article id="signInArticle">
+								<h2 class="major">Sign In</h2>
+															<!-- added this line of detail to this page - AMANDA-->
+								<p>Sign in for exclusive access to new content monthly. </p>
+								<form method="post" action="#" id="signInForm">
+									<div class="fields">
+										<div class="field">
+											<label for="nameSignIn">Name</label>
+											<input type="text" name="nameSignIn" id="nameSignIn"  />
+											<div id="unSignInWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+										</div>
+										<div class="field">
+											<label for="emailSignIn">Email Address</label>
+											<input type="text" name="emailSignIn" id="emailSignIn" />
+											<div id="emSignInWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" name="submit" value="Sign In" class="primary"/></li>
+									</ul>
+								</form>
+							</article>
+
+<!--                        Sign In Result-->
+						<article id="signInResult">
+							<!-- modified grammar here - AMANDA-->
+							<h3 class="major" id="signInSuccess">Sign In Successful</h3>
+						</article>
+
+						<article id="signInResultFail">
+							<!-- modified grammar here - AMANDA-->
+							<h3 class="major" id="signInFail">This username doesn't exists.</h3>
+						</article>
+
+<!--                        Sign Up Form-->
+						<article id="signUpArticle">
+							<h2 class="major">Sign Up</h2>
+							<!-- added this line of detail to this page - AMANDA-->
+							<p>Sign up for exclusive access to new content monthly.</p>
+							<form method="post" action="#" id="signUpForm">
+								<div class="fields">
+									<div class="field">
+										<label for="nameSignUp">Name</label>
+										<input type="text" name="nameSignUp" id="nameSignUp"  />
+										<div id="unSignUpWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+									</div>
+									<div class="field">
+										<label for="emailSignUp">Email Address</label>
+										<input type="text" name="emailSignUp" id="emailSignUp" />
+										<div id="emSignUpWarning" style="color: #B32121; font-weight: bold; border-radius: 4px; background-color: #eeeeee; padding-left: 10pt; margin-top: 5pt;"></div><br/>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" name="submit" value="Sign Up" class="primary"/></li>
+								</ul>
+							</form>
+						</article>
+<!--                        Sign Up Result-->
+						<article id="signUpResult">
+							<!-- modified grammar here - AMANDA-->
+							<h3 class="major" id="signUpSuccess">Sign Up Successful</h3>
+						</article>
+<!--                        Sign Up Result-->
+						<article id="signUpResultFail">
+							<!-- modified grammar here - AMANDA-->
+							<h3 class="major" id="signUpFail">This username already exists.</h3>
+						</article>
+					
+					</div>
+
+				<!-- Footer -->
+<!--                // Modified the footer - AMANDA-->
+					<footer id="footer">
+						<p class="copyright">&copy; Week 7 Group Project.<br/> </p>
+						<ul class="icons">
+                            <br/>
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+					</footer>
+
+			</div>
+	</div>
+<!--		// deleted a bunch of random code here that was unnecessary - AMANDA-->
+		<!-- BG -->
+			<div id="bg"></div>
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/contactForm.js"></script>
+			<script src="assets/js/signIn.js"></script>
+			<script src="assets/js/signUp.js"></script>
+	</body>
+</html>
